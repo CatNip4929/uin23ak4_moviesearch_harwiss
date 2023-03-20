@@ -4,7 +4,7 @@ import './css/main.css'
 
 function App() {
   return (
-    <h1>we back</h1>
+    <h1>ait</h1>
   );
 }
 
