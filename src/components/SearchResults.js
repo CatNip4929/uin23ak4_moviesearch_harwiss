@@ -13,7 +13,7 @@ export default function SearchResults({  movies}){
        if (searchString.length > 3) {
         return item?.Title.toLowerCase().includes(searchString);
        } return (
-        null
+        <MovieCard />
        )
     })
         
