@@ -1,8 +1,8 @@
-export default function MovieCard({ Title, Year, imdbID, Poster}){
+export default function MovieCard({  Year, imdbID, Poster, Title}){
     return(
         <article className="movie-card">
+            <h2>{Title}</h2>
             <img src={Poster} alt={Title} />
-            <h3>{Title}</h3>
             <p>{Year}</p>
             <p>{imdbID}</p>
         </article>

@@ -1,5 +1,18 @@
 body {
-  background-color: aquamarine;
+  background-color: steelblue;
+}
+body .nav-search {
+  margin-left: 200px;
+}
+body .movie-card {
+  max-width: 1200px;
+  margin-left: 100px;
+  width: 200px;
+  display: inline-block;
+}
+body .movie-card img {
+  max-width: 200px;
+  max-height: 200px;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvbWFpbi5zY3NzIiwibWFpbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSw0QkFBQTtBQ0NKIiwiZmlsZSI6Im1haW4uY3NzIn0= */
+/*# sourceMappingURL=main.css.map */
