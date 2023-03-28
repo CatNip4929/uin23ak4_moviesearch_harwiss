@@ -1,3 +1,4 @@
+import { data } from "autoprefixer"
 import { useEffect, useState } from "react"
 import SearchResults from "./SearchResults"
 
@@ -16,6 +17,7 @@ export default function FetchApi() {
 
     }
 
+    console.log(data.Search)
     useEffect(() => {
         getMovies()
     }, [])

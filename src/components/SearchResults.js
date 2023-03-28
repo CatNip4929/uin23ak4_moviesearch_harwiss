@@ -10,7 +10,7 @@ export default function SearchResults({  movies}){
     }
 
     const filteredData = movies?.filter((item)  => {
-       if (searchString.length > 3) {
+       if (searchString.length > 2) {
         return item?.Title.toLowerCase().includes(searchString);
        } return (
         <MovieCard />
