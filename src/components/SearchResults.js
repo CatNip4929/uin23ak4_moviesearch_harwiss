@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Header from "./Header"
 import MovieCard from "./MovieCard"
 
-export default function SearchResults({movies}){
+export default function SearchResults(){
     const [searchString, setSearchString] = useState("")
     const [moviesSearch, setMoviesSearch] = useState([])
 
@@ -23,7 +23,7 @@ export default function SearchResults({movies}){
     const response = await fetch(`http://www.omdbapi.com/?s=${searchString}&type=movie&apikey=855d4863`)
         const data = await response.json()
         setMoviesSearch(data.Search)
-
+        
     }
 
     const getDefault = async() => {
