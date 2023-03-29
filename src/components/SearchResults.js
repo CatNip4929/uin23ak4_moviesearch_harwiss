@@ -1,36 +1,49 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Header from "./Header"
 import MovieCard from "./MovieCard"
 
-export default function SearchResults({  movies}){
+export default function SearchResults({movies}){
     const [searchString, setSearchString] = useState("")
-    
+    const [moviesSearch, setMoviesSearch] = useState([])
+
+    useEffect(() => {
+       if (searchString.length > 2){
+         searchMovies()
+       } else {
+        getDefault()
+       }
+    }, [searchString])
+    //håndterer tekststrengen i søkefeltet å gjør om all tekst til små bokstaver. fordi Api kallet trenger tekststreng i lowerCase
     let searchHandler = (e) => {
         var lowerCase = e.target.value.toLowerCase();
         setSearchString(lowerCase)
     }
+    //kaller på api'et og venter på response fra searchString.
+    const searchMovies = async() => {
+    const response = await fetch(`http://www.omdbapi.com/?s=${searchString}&type=movie&apikey=855d4863`)
+        const data = await response.json()
+        setMoviesSearch(data.Search)
 
-    const filteredData = movies?.filter((item)  => {
-       if (searchString.length > 2) {
-        return item?.Title.toLowerCase().includes(searchString);
-       } return (
-        <MovieCard />
-       )
-    })
-        
-  
+    }
+
+    const getDefault = async() => {
+        const response = await fetch('http://www.omdbapi.com/?s=james+bond&type=movie&apikey=855d4863')
+        const data = await response.json()
+        setMoviesSearch(data.Search)
+    }
+   
     return(
         <>
+        <Header />
     <nav className="nav-search">
-            <h1>Movie Search</h1>
+            <h2>Søk Her!</h2>
             <input label="Search" onChange={searchHandler} placeholder="search..."></input>
     </nav>
      <main>
-    {searchString.length === 0 ? movies?.map((item, index) =>(
+    {moviesSearch?.map((item, index) =>(
         <MovieCard key={index} Poster={item.Poster} Title={item.Title} Year={item.Year} imdbID={item.imdbID} />
-    )) :  filteredData?.map((item, index) => (
-        <MovieCard key={index} Poster={item.Poster} Title={item.Title} Year={item.Year} imdbID={item.imdbID} />   
-        
-    ))}
+    )) 
+    }
     </main>
     <footer>Footer</footer>
     </>
