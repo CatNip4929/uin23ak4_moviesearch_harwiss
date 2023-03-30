@@ -1,18 +1,76 @@
-body {
-  background-color: steelblue;
-}
-body .nav-search {
-  margin-left: 200px;
-}
-body .movie-card {
-  max-width: 1200px;
-  margin-left: 100px;
-  width: 200px;
-  display: inline-block;
-}
-body .movie-card img {
-  max-width: 200px;
-  max-height: 200px;
+@media only screen and (min-width: 200px) {
+  body {
+    background-color: steelblue;
+    max-width: 1400px;
+  }
+  body h1 {
+    margin-left: 45%;
+    margin-bottom: 0.5rem;
+  }
+  body .nav-search {
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    border-style: solid;
+    width: 90%;
+    margin-right: 2rem;
+  }
+  body .nav-search input {
+    width: 10rem;
+    height: 1.5rem;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  body .nav-search h2 {
+    margin-left: 2rem;
+  }
+  body main {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    border-style: solid;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  body .movie-card {
+    max-width: 300px;
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    position: inline-block;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    border-style: solid;
+    box-shadow: 3px 3px 2px 1px black;
+  }
+  body .movie-card img {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 250px;
+    margin-left: 3rem;
+    margin-right: auto;
+    width: 300px;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+  }
+  body .movie-card h3 {
+    display: flex;
+    margin-left: 2rem;
+    position: center;
+    justify-content: center;
+  }
+  body .movie-card p {
+    display: flex;
+    width: 50%;
+    flex: wrap;
+    position: center;
+    margin-left: 2.8rem;
+    justify-content: space-between;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
